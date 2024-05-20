@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useState, useEffect } from "react";
 import { main, getCars, getUsers } from "@/utile/db2";
 import { addUser } from "@/utile/db4";
+import { updateTasks } from "@/utile/db5";
 
 const ModalComponent = () => {
   const [taskTitle, setTaskTitle] = useState("");
@@ -26,10 +27,11 @@ const ModalComponent = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(taskTitle);
+    console.log("handlesubmit");
     closeMOdal();
     // main(uuidv4(), taskTitle);
-    addUser(uuidv4(), taskTitle);
+    // addUser(uuidv4(), taskTitle);
+    updateTasks();
   };
 
   return (

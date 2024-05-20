@@ -8,17 +8,18 @@ AWS.config.update(awsConfig);
 
 let docClient = new AWS.DynamoDB.DocumentClient();
 
-export let updateUser = function () {
+export const updateTasks = function () {
+  console.log("update tasks");
   var params = {
     TableName: "users",
-    Key: { id: "test-id-no=two" },
-    UpdateExpression: "set updated_by = :byUser, is_deleted = :boolValue",
-    // UpdateExpression: "set updated_by = :byUser, is_deleted = :boolValue, REMOVE tasks",
+    Key: { id: "308c042c-2189-47d9-98a2-732e0daab8de" },
+    // UpdateExpression: "set updated_by = :byUser, is_deleted = :boolValue",
+    UpdateExpression: "set tasks = :tasks",
     // UpdateExpression: "set age = :age",
     // UpdateExpression: "REMOVE updated_by",
     ExpressionAttributeValues: {
-      ":byUser": "cringer",
-      ":boolValue": true,
+      ":tasks": [{ "task one": "this is task one" }],
+      // ":cols": "come cols here",
     },
     ReturnValues: "UPDATED_NEW",
   };

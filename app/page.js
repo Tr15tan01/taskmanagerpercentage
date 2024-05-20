@@ -55,12 +55,12 @@ export default function Home() {
     //   // console.log("second console.");
     // });
 
-    updateUser();
+    // updateUser();
 
     const fetchData = async () => {
       const data = await getUsers();
       console.log("data is ", data.Items[0]);
-      setData(data.Items[3]);
+      setData(data.Items[1]);
       setLoading(false);
       return data;
     };
