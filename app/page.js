@@ -59,8 +59,8 @@ export default function Home() {
 
     const fetchData = async () => {
       const data = await getUsers();
-      console.log("data is ", data.Items[0]);
-      setData(data.Items[1]);
+      console.log("data is ", data.Items[1]);
+      setData(data.Items[8]);
       setLoading(false);
       return data;
     };

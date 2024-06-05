@@ -18,7 +18,10 @@ export const updateTasks = function () {
     // UpdateExpression: "set age = :age",
     // UpdateExpression: "REMOVE updated_by",
     ExpressionAttributeValues: {
-      ":tasks": [{ "task one": "this is task one" }],
+      ":tasks": [
+        { "task one": "this is task one" },
+        { "task two": "this is task two" },
+      ],
       // ":cols": "come cols here",
     },
     ReturnValues: "UPDATED_NEW",
