@@ -12,15 +12,18 @@ export const updateTasks = function () {
   console.log("update tasks");
   var params = {
     TableName: "users",
-    Key: { id: "308c042c-2189-47d9-98a2-732e0daab8de" },
+    Key: { id: "test-id-no=five" },
     // UpdateExpression: "set updated_by = :byUser, is_deleted = :boolValue",
     UpdateExpression: "set tasks = :tasks",
     // UpdateExpression: "set age = :age",
     // UpdateExpression: "REMOVE updated_by",
     ExpressionAttributeValues: {
       ":tasks": [
-        { "task one": "this is task one" },
-        { "task two": "this is task two" },
+        { description: "this is task one", title: "This is task one title" },
+        {
+          description: "this is task two description",
+          title: "This is task two title",
+        },
       ],
       // ":cols": "come cols here",
     },
