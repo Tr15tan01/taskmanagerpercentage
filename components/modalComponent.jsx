@@ -31,7 +31,7 @@ const ModalComponent = () => {
     closeMOdal();
     // main(uuidv4(), taskTitle);
     // addUser(uuidv4(), taskTitle);
-    updateTasks();
+    updateTasks(taskTitle);
   };
 
   return (

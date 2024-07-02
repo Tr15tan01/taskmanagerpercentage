@@ -8,7 +8,7 @@ AWS.config.update(awsConfig);
 
 let docClient = new AWS.DynamoDB.DocumentClient();
 
-export const updateTasks = function () {
+export const updateTasks = function (task1_title) {
   console.log("update tasks");
   var params = {
     TableName: "users",
@@ -19,7 +19,7 @@ export const updateTasks = function () {
     // UpdateExpression: "REMOVE updated_by",
     ExpressionAttributeValues: {
       ":tasks": [
-        { description: "this is task one", title: "This is task one title" },
+        { description: task1_title, title: "This is task one title" },
         {
           description: "this is task two description",
           title: "This is task two title",
